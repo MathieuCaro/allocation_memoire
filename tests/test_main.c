@@ -106,15 +106,11 @@ void test_empty_heap(void)
 
 void test_add_to_empty_heap(void)
 {
-
     char *p1,*p2;
-
     init();
     p1 = (char* )tas_malloc(125);
     strcpy(p1, "ab");
-
     p2 = (char*)tas_malloc(3);
-
     CU_ASSERT(p2 == NULL);
     CU_ASSERT(libre == 126);
 }
@@ -145,7 +141,6 @@ int main()
         NULL == CU_add_test(pSuite, "test full example", test_full_example) ||
         NULL == CU_add_test(pSuite, "test empty tas", test_empty_heap) ||
         NULL == CU_add_test(pSuite, "test add to empty tas", test_add_to_empty_heap) 
-
 	)
 	{
 		CU_cleanup_registry();
